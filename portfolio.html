@@ -10,11 +10,58 @@
         <a href="portfolio.html" class="button">Portfolio</a>
         <a href="about_me.html" class="button">About Me</a>
         <a href="career.html" class="button">Career</a></center>
-        <h1>This is my Portfolio Page!</h1>
-        <img src="images/portfolio.jpg" height="250">
-        <br>
-        <a target="_blank" href="http://www.youtube.com">
-            <img src="images/youtube.png" height="100">
-        </a>
+        
+        
+        
+        <center> 
+
+        <a href="javascript:switchTab('tb_1', 'content_1');" id="tb_1" class="tabmenu active"><button>Portfolio</button></a>
+        <a href="javascript:switchTab('tb_2', 'content_2');" id="tb_2" class="tabmenu"><button>Basketball</button></a>
+       
+        
+        </center>
+        
+        <div id="content_1" class="tabcontent"> 
+            <h1>This is my Portfolio Page!</h1>
+            <img src="images/portfolio.jpg" height="250">    
+        </div> 
+        <div id="content_2" class="tabcontent" style="display:none;">
+            <a target="_blank" href="http://www.youtube.com">
+                <img src="images/youtube.png" height="100">
+            </a>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QOShPreMmpo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        <div id="content_3" class="tabcontent" style="display:none;">
+            <p>Your 3rd content</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nGeKSiCQkPw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="content_4" class="tabcontent" style="display:none;">
+            <p>Your 4th content</p></p>
+            <iframe src="https://jamesbmadden.github.io/scratch-silicon/#244595740" width="400px" height="400px" allowFullscreen></iframe>
+        </div>
+                
+        
+        
     </body>
+    
+    <script>
+        function switchTab(tab_id, tab_content) {
+        // first of all we get all tab content blocks (I think the best way to get them by class names)
+        var x = document.getElementsByClassName("tabcontent");
+        var i;
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = 'none'; // hide all tab content
+        }
+        document.getElementById(tab_content).style.display = 'block'; // display the content of the tab we need
+        
+        // now we get all tab menu items by class names (use the next code only if you need to highlight current tab)
+        var x = document.getElementsByClassName("tabmenu");
+        var i;
+        for (i = 0; i < x.length; i++) {
+        x[i].className = 'tabmenu'; 
+        }
+        document.getElementById(tab_id).className = 'tm_active';
+        }
+    </script>
+
 </html>
